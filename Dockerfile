@@ -7,8 +7,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Make entrypoint executable
-RUN chmod +x entrypoint.sh
-
-# Use entrypoint to handle PORT variable
-ENTRYPOINT ["./entrypoint.sh"]
+# Use the enhanced simple app (no gunicorn, no complex data)
+CMD ["python", "test_deploy.py"]
