@@ -7,5 +7,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Use the simple app that should definitely work
-CMD ["python", "app_simple.py"]
+# SUPER SIMPLE test - no templates, no complex data
+CMD ["python", "test_deploy.py"]
