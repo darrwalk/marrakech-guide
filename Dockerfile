@@ -7,4 +7,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["gunicorn", "--bind", "0.0.0.0:10000", "app:app"]
+# Use PORT environment variable provided by Render
+CMD gunicorn --bind 0.0.0.0:${PORT:-10000} app:app

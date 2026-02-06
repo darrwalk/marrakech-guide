@@ -3,6 +3,3 @@ services:
     name: marrakech-guide
     env: docker
     dockerfilePath: ./Dockerfile
-    envVars:
-      - key: PORT
-        value: 10000
