@@ -7,5 +7,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Use the enhanced simple app (no gunicorn, no complex data)
-CMD ["python", "test_deploy.py"]
+# Make start script executable
+RUN chmod +x start.sh
+
+# Use start script to handle PORT variable
+CMD ["./start.sh"]
