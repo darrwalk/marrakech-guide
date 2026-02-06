@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --moroccan-red: #c1272d;
+            --moroccan-blue: #0066cc;
+            --moroccan-gold: #ffd700;
+            --moroccan-green: #008000;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--moroccan-red) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .section-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--moroccan-blue);
+            transition: transform 0.3s ease;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .experience-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .fact-box {
+            background: linear-gradient(135deg, var(--moroccan-blue), var(--moroccan-green));
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tip-badge {
+            background-color: var(--moroccan-gold);
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        
+        .link-btn {
+            background-color: var(--moroccan-red);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .link-btn:hover {
+            background-color: #a02020;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .section-title {
+            color: var(--moroccan-blue);
+            border-bottom: 3px solid var(--moroccan-gold);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .section-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-map-marked-alt"></i> {{ data.title }}
+            </a>
+            <div class="navbar-text">
+                <small class="text-muted">Last updated: {{ data.last_updated }}</small>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">{{ data.title }}</h1>
+            <p class="lead mb-4">{{ data.subtitle }}</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="fact-box">
+                        <div class="row">
+                            <div class="col-md-3 col-6 mb-3">
+                                <i class="fas fa-clock fa-2x mb-2"></i>
+                                <h5>Time Zone</h5>
+                                <p>{{ data.quick_facts.time_zone }}</p>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <i class="fas fa-money-bill-wave fa-2x mb-2"></i>
+                                <h5>Currency</h5>
+                                <p>{{ data.quick_facts.currency }}</p>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <i class="fas fa-language fa-2x mb-2"></i>
+                                <h5>Language</h5>
+                                <p>{{ data.quick_facts.language }}</p>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <i class="fas fa-temperature-high fa-2x mb-2"></i>
+                                <h5>Weather (Feb)</h5>
+                                <p>{{ data.quick_facts.weather_feb }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        {% for section in data.sections %}
+        <div class="section-card">
+            <h2 class="section-title">{{ section.title }}</h2>
+            <div class="row">
+                {% for item in section.items %}
+                <div class="col-lg-6 mb-4">
+                    <div class="experience-card">
+                        <img src="{{ item.image }}" class="card-img-top" alt="{{ item.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.title }}</h5>
+                            <p class="card-text">{{ item.description }}</p>
+                            
+                            <h6><i class="fas fa-lightbulb text-warning"></i> Tips:</h6>
+                            <div class="mb-3">
+                                {% for tip in item.tips %}
+                                <span class="tip-badge">{{ tip }}</span>
+                                {% endfor %}
+                            </div>
+                            
+                            <h6><i class="fas fa-link text-primary"></i> Useful Links:</h6>
+                            <div class="mb-3">
+                                {% for link in item.links %}
+                                <a href="{{ link.url }}" target="_blank" class="link-btn">
+                                    <i class="fas fa-external-link-alt"></i> {{ link.text }}
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+        
+        <!-- Quick Tips Section -->
+        <div class="section-card">
+            <h2 class="section-title">💎 Quick Tips</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body text-center">
+                            <i class="fas fa-utensils fa-3x text-primary mb-3"></i>
+                            <h5>Food & Drink</h5>
+                            <p>Drink bottled water only. Street food is generally safe at busy stalls.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 border-success">
+                        <div class="card-body text-center">
+                            <i class="fas fa-money-bill-alt fa-3x text-success mb-3"></i>
+                            <h5>Money</h5>
+                            <p>Carry small bills for taxis and tips. ATMs are widely available.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 border-warning">
+                        <div class="card-body text-center">
+                            <i class="fas fa-camera fa-3x text-warning mb-3"></i>
+                            <h5>Photography</h5>
+                            <p>Ask permission before photographing people. Respect local customs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container text-center">
+            <h4><i class="fas fa-heart text-danger"></i> Enjoy Your Marrakech Adventure!</h4>
+            <p class="mb-3">This guide was created for your trip in February 2026.</p>
+            <div class="mb-3">
+                <a href="/api/data" class="link-btn" target="_blank">
+                    <i class="fas fa-code"></i> API Data
+                </a>
+                <a href="/health" class="link-btn" target="_blank">
+                    <i class="fas fa-heartbeat"></i> Health Check
+                </a>
+            </div>
+            <p class="small">
+                <i class="far fa-copyright"></i> 2026 Marrakech Travel Guide | 
+                Images from Unsplash | 
+                <i class="fas fa-magic"></i> Created with ❤️ for your trip
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click tracking to links
+            const links = document.querySelectorAll('.link-btn');
+            links.forEach(link => {
+                link.addEventListener('click', function() {
+                    console.log('Link clicked:', this.href);
+                });
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId !== '#') {
+                        document.querySelector(targetId).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
