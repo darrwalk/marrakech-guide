@@ -192,9 +192,27 @@ def hello():
                         <div class="fact-box">
                             <h5><i class="fas fa-concierge-bell"></i> Traditional Restaurants</h5>
                             <ul>
-                                <li><strong>Le Jardin</strong> - Beautiful courtyard, great lunch</li>
-                                <li><strong>Nomad</strong> - Modern Moroccan, rooftop with view</li>
-                                <li><strong>Dar Moha</strong> - Fine dining, set menu experience</li>
+                                <li>
+                                    <strong>Le Jardin</strong> - Beautiful courtyard, great lunch
+                                    <br><a href="https://www.tripadvisor.com/Restaurant_Review-g293734-d1070421-Reviews-Le_Jardin-Marrakech_Marrakech_Safi.html" 
+                                          class="link-btn small" target="_blank">
+                                        <i class="fab fa-tripadvisor"></i> TripAdvisor Reviews
+                                    </a>
+                                </li>
+                                <li>
+                                    <strong>Nomad</strong> - Modern Moroccan, rooftop with view
+                                    <br><a href="https://www.tripadvisor.com/Restaurant_Review-g293734-d7782547-Reviews-Nomad-Marrakech_Marrakech_Safi.html" 
+                                          class="link-btn small" target="_blank">
+                                        <i class="fab fa-tripadvisor"></i> TripAdvisor Reviews
+                                    </a>
+                                </li>
+                                <li>
+                                    <strong>Dar Moha</strong> - Fine dining, set menu experience
+                                    <br><a href="https://www.tripadvisor.com/Restaurant_Review-g293734-d1052804-Reviews-Dar_Moha-Marrakech_Marrakech_Safi.html" 
+                                          class="link-btn small" target="_blank">
+                                        <i class="fab fa-tripadvisor"></i> TripAdvisor Reviews
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
